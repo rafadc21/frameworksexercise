@@ -7,7 +7,7 @@ public class myFramework {
     ///   - value: A int value
     ///   - OtherValue: the multiplier value
     /// - Returns: The result of the multiplication of value times multiplier
-    internal class func multiply(_ value: Int, per multiplier: Int ) -> Int {
+    public class func multiply(_ value: Int, per multiplier: Int ) -> Int {
         return value * multiplier
     }
 }
