@@ -4,13 +4,13 @@ import XCTest
 final class myFrameworkTests: XCTestCase {
     
     func testColorEqualRed() {
-        let color = myFramework.colorFromHexString("FFFFFF")
-        XCTAssertEqual(color, .white)
+        let value = myFramework.multiply(2, per: 2)
+        XCTAssertEqual(4, value)
     }
     
     func testColorEqualMyColor() {
-        let color = myFramework.colorFromHexString("006736")
-        XCTAssertEqual(color, myFramework.myColor)
+        let value = myFramework.multiply(3, per: 3)
+        XCTAssertEqual(9, value)
     }
 }
     

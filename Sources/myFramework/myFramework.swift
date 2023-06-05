@@ -1,31 +1,13 @@
 import SwiftUI
 
-@available(macOS 10.15, *)
 public class myFramework {
-    /// Allows you to convert a 6 digit hexadecimal string into a UIColor instance
-    ///  - Warning: The "#" symbol is stripped from the beggining of the string submitted here.
+    /// Allows you to get the result of a multiplication of 2 numbers
+    ///  - Warning: It only works for integer numbers
     /// - Parameters:
-    ///   - hexString: A 6-digit hexadecimal string. Use 6 digits rather than 8, and addd the accompanying alpha value in the second parameter.
-    ///   - alpha: A number between 0.0 and 1.0 indicating how transparent the color is
-    /// - Returns: A UIColor defined by the 'hexString' parameter
-    internal class func colorFromHexString(_ hexString: String, alpha: CGFloat = 1.0) -> Color {
-        let r, g, b: CGFloat
-        let offset = hexString.hasPrefix("#") ? 1 : 0
-        let start = hexString.index(hexString.startIndex, offsetBy: offset)
-        let hexColor = String(hexString[start...])
-        let scanner = Scanner(string: hexColor)
-        var hexNumber: UInt64 = 0
-        if scanner.scanHexInt64(&hexNumber) {
-            r = CGFloat((hexNumber & 0xff0000) >> 16) / 255
-            g = CGFloat((hexNumber & 0x00ff00) >> 8) / 255
-            b = CGFloat(hexNumber & 0x0000ff) / 255
-            return Color(red: r, green: g, blue: b).opacity(alpha)
-        }
-        return Color(red: 0, green: 0, blue: 0).opacity(alpha)
-    }
-    
-    /// This color eye used for testing
-    public static var myColor: Color {
-        return self.colorFromHexString("006736")
+    ///   - value: A int value
+    ///   - OtherValue: the multiplier value
+    /// - Returns: The result of the multiplication of value times multiplier
+    internal class func multiply(_ value: Int, per multiplier: Int ) -> Int {
+        return value * multiplier
     }
 }
